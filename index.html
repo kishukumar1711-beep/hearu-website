@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HearU — Someone to Listen</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">HearU</div>
+
+        <nav>
+            <a href="#how">How it works</a>
+            <a href="#sessions">Sessions</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="small-title">YOU DON'T HAVE TO TALK ALONE</p>
+
+                <h1>
+                    Sometimes you just
+                    <span>need someone to listen.</span>
+                </h1>
+
+                <p class="description">
+                    A simple, judgment-free conversation when you
+                    need someone to hear you out.
+                </p>
+
+                <div class="buttons">
+                    <a href="#sessions" class="primary-button">
+                        Book a call
+                    </a>
+
+                    <a href="#how" class="secondary-button">
+                        How it works
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="how" class="section">
+
+            <p class="section-label">HOW IT WORKS</p>
+
+            <h2>Simple. Private. Human.</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="number">01</div>
+                    <h3>Choose a session</h3>
+                    <p>
+                        Pick the conversation length that works for you.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="number">02</div>
+                    <h3>Book a time</h3>
+                    <p>
+                        Choose a convenient time for your call.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="number">03</div>
+                    <h3>Just talk</h3>
+                    <p>
+                        Talk openly. No judgment. No pressure.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="sessions" class="section sessions">
+
+            <p class="section-label">SESSIONS</p>
+
+            <h2>Pick your conversation.</h2>
+
+            <div class="pricing">
+
+                <div class="price-card">
+                    <h3>Quick Talk</h3>
+
+                    <div class="price">
+                        ₹19
+                    </div>
+
+                    <p>15 minutes</p>
+
+                    <button onclick="bookSession('Quick Talk')">
+                        Book
+                    </button>
+                </div>
+
+
+                <div class="price-card featured">
+
+                    <div class="popular">
+                        MOST POPULAR
+                    </div>
+
+                    <h3>Standard Talk</h3>
+
+                    <div class="price">
+                        ₹39
+                    </div>
+
+                    <p>30 minutes</p>
+
+                    <button onclick="bookSession('Standard Talk')">
+                        Book
+                    </button>
+
+                </div>
+
+
+                <div class="price-card">
+
+                    <h3>Long Talk</h3>
+
+                    <div class="price">
+                        ₹59
+                    </div>
+
+                    <p>45 minutes</p>
+
+                    <button onclick="bookSession('Long Talk')">
+                        Book
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="booking" class="section booking">
+
+    <p class="section-label">BOOK A SESSION</p>
+
+    <h2>Let's talk.</h2>
+
+    <p class="booking-intro">
+        Choose a session and tell us when you'd like to talk.
+    </p>
+
+    <form id="bookingForm">
+
+        <label for="name">Name or nickname</label>
+        <input
+            type="text"
+            id="name"
+            placeholder="What should we call you?"
+            required
+        >
+
+        <label for="session">Choose a session</label>
+        <select id="session" required>
+            <option value="">Select a session</option>
+            <option value="Quick Talk — ₹19">Quick Talk — ₹19</option>
+            <option value="Standard Talk — ₹39">Standard Talk — ₹39</option>
+            <option value="Long Talk — ₹59">Long Talk — ₹59</option>
+        </select>
+
+        <label for="date">Preferred date</label>
+        <input
+            type="date"
+            id="date"
+            required
+        >
+
+        <label for="time">Preferred time</label>
+        <input
+            type="time"
+            id="time"
+            required
+        >
+
+        <button type="submit">
+            Request a call
+        </button>
+
+    </form>
+
+</section>
+        <section id="about" class="section about">
+
+            <p class="section-label">ABOUT HEARU</p>
+
+            <h2>What HearU is — and isn't.</h2>
+
+            <p>
+                HearU is a peer-listening service designed for people
+                who simply want someone to listen and have a genuine
+                conversation.
+            </p>
+
+            <p>
+                HearU is not therapy, psychological treatment,
+                diagnosis, or emergency support.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="logo">HearU</div>
+
+        <p>
+            Sometimes you just need someone to listen.
+        </p>
+
+        <small>
+            © 2026 HearU
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
