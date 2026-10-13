@@ -343,3 +343,14 @@ footer small {
 #bookingForm button:hover {
     opacity: 0.85;
 }
+/* BOOKING CONFIRMATION MESSAGE */
+
+#confirmationMessage {
+    color: #6ee7a0;
+    background: #17251e;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
