@@ -1,48 +1,64 @@
 
 function bookSession(sessionName) {
-
-    // Select the matching session
     const sessionSelect = document.getElementById("session");
 
     if (sessionName === "Quick Talk") {
         sessionSelect.value = "Quick Talk — ₹19";
-    }
-
-    if (sessionName === "Standard Talk") {
+    } else if (sessionName === "Standard Talk") {
         sessionSelect.value = "Standard Talk — ₹39";
-    }
-
-    if (sessionName === "Long Talk") {
+    } else if (sessionName === "Long Talk") {
         sessionSelect.value = "Long Talk — ₹59";
     }
 
-    // Scroll to the booking form
     document.getElementById("booking").scrollIntoView({
         behavior: "smooth"
     });
 }
 
+const bookingForm = document.getElementById("bookingForm");
+const confirmationMessage = document.getElementById("confirmationMessage");
 
-// Handle booking fSorm submission
-document.getElementById("bookingForm").addEventListener("submit", function(event) {
-
+bookingForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    // Get the form values
-    const name = document.getElementById("name").value;
-    const session = document.getElementById("session").value;
-    const date = document.getElementById("date").value;
-    const time = document.getElementById("time").value;
+    const submitButton = bookingForm.querySelector('button[type="submit"]');
 
-    // Find the confirmation message
-    const confirmationMessage = document.getElementById("confirmationMessage");
-
-    // Display the confirmation
-    confirmationMessage.textContent =
-        "Thanks, " + name + "! Your demo request for " +
-        session + " on " + date + " at " + time +
-        " has been recorded on this page.";
+    // Prevent repeated submissions while sending
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
 
     confirmationMessage.hidden = false;
+    confirmationMessage.textContent = "Sending your request...";
+    confirmationMessage.style.color = "";
 
+    try {
+        const response = await fetch(bookingForm.action, {
+            method: "POST",
+            body: new FormData(bookingForm),
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (response.ok) {
+            confirmationMessage.textContent =
+                "Your request was sent successfully! This is a request, not a confirmed booking. We'll contact you after reviewing it.";
+
+            confirmationMessage.style.color = "#6ee7a0";
+            bookingForm.reset();
+        } else {
+            confirmationMessage.textContent =
+                "We couldn't send your request. Please try again later.";
+
+            confirmationMessage.style.color = "#ff8a8a";
+        }
+    } catch (error) {
+        confirmationMessage.textContent =
+            "Connection error. Please check your internet and try again.";
+
+        confirmationMessage.style.color = "#ff8a8a";
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Request a call";
+    }
 });

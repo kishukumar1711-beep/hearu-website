@@ -354,3 +354,77 @@ footer small {
     margin-top: 15px;
     font-size: 14px;
 }
+/* FOUNDER SECTION */
+
+.founder-section {
+    padding: 90px 8%;
+    background: #101a18;
+    color: #f5f5f5;
+}
+
+.founder-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+.founder-photo {
+    flex: 0 0 280px;
+}
+
+.founder-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1px solid #355247;
+}
+
+.founder-text {
+    flex: 1;
+}
+
+.founder-label {
+    color: #6ee7a0;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.founder-text h2 {
+    font-size: clamp(30px, 4vw, 44px);
+    margin: 15px 0;
+}
+
+.founder-text h3 {
+    color: #6ee7a0;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.founder-text p {
+    line-height: 1.8;
+    color: #c6d1cc;
+}
+
+.founder-text .founder-signature {
+    margin-top: 24px;
+    color: #6ee7a0;
+    font-style: italic;
+}
+
+@media (max-width: 700px) {
+    .founder-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .founder-photo {
+        width: 220px;
+        flex-basis: auto;
+    }
+}

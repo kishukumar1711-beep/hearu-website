@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,11 +22,10 @@
         </nav>
     </header>
 
-
     <main>
 
+        <!-- HERO SECTION -->
         <section class="hero">
-
             <div class="hero-text">
 
                 <p class="small-title">YOU DON'T HAVE TO TALK ALONE</p>
@@ -51,10 +51,9 @@
                 </div>
 
             </div>
-
         </section>
 
-
+        <!-- HOW IT WORKS -->
         <section id="how" class="section">
 
             <p class="section-label">HOW IT WORKS</p>
@@ -66,32 +65,25 @@
                 <div class="card">
                     <div class="number">01</div>
                     <h3>Choose a session</h3>
-                    <p>
-                        Pick the conversation length that works for you.
-                    </p>
+                    <p>Pick the conversation length that works for you.</p>
                 </div>
 
                 <div class="card">
                     <div class="number">02</div>
                     <h3>Book a time</h3>
-                    <p>
-                        Choose a convenient time for your call.
-                    </p>
+                    <p>Choose a convenient time for your call.</p>
                 </div>
 
                 <div class="card">
                     <div class="number">03</div>
                     <h3>Just talk</h3>
-                    <p>
-                        Talk openly. No judgment. No pressure.
-                    </p>
+                    <p>Talk openly. No judgment. No pressure.</p>
                 </div>
 
             </div>
-
         </section>
 
-
+        <!-- SESSION PRICING -->
         <section id="sessions" class="section sessions">
 
             <p class="section-label">SESSIONS</p>
@@ -102,111 +94,105 @@
 
                 <div class="price-card">
                     <h3>Quick Talk</h3>
-
-                    <div class="price">
-                        ₹19
-                    </div>
-
+                    <div class="price">₹19</div>
                     <p>15 minutes</p>
 
-                    <button onclick="bookSession('Quick Talk')">
+                    <button type="button" onclick="bookSession('Quick Talk')">
                         Book
                     </button>
                 </div>
-
 
                 <div class="price-card featured">
-
-                    <div class="popular">
-                        MOST POPULAR
-                    </div>
+                    <div class="popular">MOST POPULAR</div>
 
                     <h3>Standard Talk</h3>
-
-                    <div class="price">
-                        ₹39
-                    </div>
-
+                    <div class="price">₹39</div>
                     <p>30 minutes</p>
 
-                    <button onclick="bookSession('Standard Talk')">
+                    <button type="button" onclick="bookSession('Standard Talk')">
                         Book
                     </button>
-
                 </div>
 
-
                 <div class="price-card">
-
                     <h3>Long Talk</h3>
-
-                    <div class="price">
-                        ₹59
-                    </div>
-
+                    <div class="price">₹59</div>
                     <p>45 minutes</p>
 
-                    <button onclick="bookSession('Long Talk')">
+                    <button type="button" onclick="bookSession('Long Talk')">
                         Book
                     </button>
-
                 </div>
 
             </div>
-
         </section>
 
+        <!-- BOOKING FORM -->
         <section id="booking" class="section booking">
 
-    <p class="section-label">BOOK A SESSION</p>
+            <p class="section-label">BOOK A SESSION</p>
 
-    <h2>Let's talk.</h2>
+            <h2>Let's talk.</h2>
 
-    <p class="booking-intro">
-        Choose a session and tell us when you'd like to talk.
-    </p>
+            <p class="booking-intro">
+                Choose a session and tell us when you'd like to talk.
+            </p>
 
-    <form id="bookingForm">
+            <form
+                id="bookingForm"
+                action="https://formspree.io/f/xbgdzyjw"
+                method="POST"
+            >
 
-        <label for="name">Name or nickname</label>
-        <input
-            type="text"
-            id="name"
-            placeholder="What should we call you?"
-            required
-        >
+                <label for="name">Name or nickname</label>
 
-        <label for="session">Choose a session</label>
-        <select id="session" required>
-            <option value="">Select a session</option>
-            <option value="Quick Talk — ₹19">Quick Talk — ₹19</option>
-            <option value="Standard Talk — ₹39">Standard Talk — ₹39</option>
-            <option value="Long Talk — ₹59">Long Talk — ₹59</option>
-        </select>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="What should we call you?"
+                    maxlength="50"
+                    required
+                >
 
-        <label for="date">Preferred date</label>
-        <input
-            type="date"
-            id="date"
-            required
-        >
+                <label for="session">Choose a session</label>
 
-        <label for="time">Preferred time</label>
-        <input
-            type="time"
-            id="time"
-            required
-        >
+                <select id="session" name="session" required>
+                    <option value="">Select a session</option>
+                    <option value="Quick Talk — ₹19">Quick Talk — ₹19</option>
+                    <option value="Standard Talk — ₹39">Standard Talk — ₹39</option>
+                    <option value="Long Talk — ₹59">Long Talk — ₹59</option>
+                </select>
 
-        <button type="submit">
-            Request a call
-        </button>
-<p id="confirmationMessage" hidden>
-    Your request has been received! We'll be in touch soon.
-</p>
-    </form>
+                <label for="date">Preferred date</label>
 
-</section>
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    min="2026-10-13"
+                    required
+                >
+
+                <label for="time">Preferred time</label>
+
+                <input
+                    type="time"
+                    id="time"
+                    name="time"
+                    required
+                >
+
+                <button type="submit">
+                    Request a call
+                </button>
+
+                <p id="confirmationMessage" hidden aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <!-- ABOUT -->
         <section id="about" class="section about">
 
             <p class="section-label">ABOUT HEARU</p>
@@ -226,23 +212,50 @@
 
         </section>
 
+        <!-- FOUNDER -->
+        <section id="founder" class="founder-section">
+
+            <div class="founder-content">
+
+                <div class="founder-photo">
+                    <img src="./founder.png" alt="Founder of HearU">
+                </div>
+
+                <div class="founder-text">
+
+                    <p class="founder-label">THE PERSON BEHIND HEARU</p>
+
+                    <h2>Meet the Founder — Kishu Kumar</h2>
+
+                    <h3>Founder of HearU</h3>
+
+                    <p>
+                        I started HearU with a simple belief:
+                        everyone deserves to feel heard.
+                        Sometimes, a judgment-free conversation
+                        can make a real difference.
+                    </p>
+
+                    <p class="founder-signature">
+                        Built with care. Made to listen.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
     </main>
 
-
+    <!-- FOOTER -->
     <footer>
 
         <div class="logo">HearU</div>
 
-        <p>
-            Sometimes you just need someone to listen.
-        </p>
+        <p>Sometimes you just need someone to listen.</p>
 
-        <small>
-            © 2026 HearU
-        </small>
+        <small>© 2026 HearU</small>
 
     </footer>
-
 
     <script src="script.js"></script>
 
